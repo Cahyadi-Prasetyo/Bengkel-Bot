@@ -1,0 +1,200 @@
+{
+  "summary": {
+    "passed": 7,
+    "total": 9,
+    "success_rate": 0.7777777777777778
+  },
+  "timestamp": "2025-09-20T18:31:47.708874",
+  "detailed_results": [
+    {
+      "test": "Health Check",
+      "success": true,
+      "details": "API is healthy",
+      "timestamp": "2025-09-20T18:31:38.161779",
+      "response_data": {
+        "status": "healthy",
+        "timestamp": "2025-09-20T18:31:38.160869"
+      }
+    },
+    {
+      "test": "User Registration",
+      "success": true,
+      "details": "User registered successfully",
+      "timestamp": "2025-09-20T18:31:39.418722",
+      "response_data": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyYTFhYTNkZi0yOTlkLTRhMzAtYmZkNi1kNjQyYWNmZWY1ZjciLCJleHAiOjE3NTgzOTQ4OTl9.2FTpLmwdn20RI6YMDHMnlVvu2YrS6oXnERHZgskuHwY",
+        "token_type": "bearer",
+        "user": {
+          "id": "2a1aa3df-299d-4a30-bfd6-d642acfef5f7",
+          "email": "testmechanic@bengkelbot.com",
+          "name": "Ahmad Mechanic",
+          "workshop_name": "Bengkel Jaya Motor",
+          "phone": "+62812345678",
+          "created_at": "2025-09-20T18:31:39.405840",
+          "is_active": true
+        }
+      }
+    },
+    {
+      "test": "User Login",
+      "success": true,
+      "details": "Login successful",
+      "timestamp": "2025-09-20T18:31:40.658390",
+      "response_data": {
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyYTFhYTNkZi0yOTlkLTRhMzAtYmZkNi1kNjQyYWNmZWY1ZjciLCJleHAiOjE3NTgzOTQ5MDB9.-FciwZjRIX9hq2yOv8rFEBHqIwzpnwBvK-xWHS18QZM",
+        "token_type": "bearer",
+        "user": {
+          "id": "2a1aa3df-299d-4a30-bfd6-d642acfef5f7",
+          "email": "testmechanic@bengkelbot.com",
+          "name": "Ahmad Mechanic",
+          "workshop_name": "Bengkel Jaya Motor",
+          "phone": "+62812345678",
+          "created_at": "2025-09-20T18:31:39.405000",
+          "is_active": true
+        }
+      }
+    },
+    {
+      "test": "JWT Token Validation",
+      "success": true,
+      "details": "Protected endpoint access successful",
+      "timestamp": "2025-09-20T18:31:41.663490",
+      "response_data": {
+        "id": "2a1aa3df-299d-4a30-bfd6-d642acfef5f7",
+        "email": "testmechanic@bengkelbot.com",
+        "name": "Ahmad Mechanic",
+        "workshop_name": "Bengkel Jaya Motor",
+        "phone": "+62812345678",
+        "created_at": "2025-09-20T18:31:39.405000",
+        "is_active": true
+      }
+    },
+    {
+      "test": "Symptoms Endpoint (id)",
+      "success": true,
+      "details": "Retrieved 11 symptoms in id",
+      "timestamp": "2025-09-20T18:31:42.666640",
+      "response_data": {
+        "count": 11,
+        "sample": {
+          "id": "weak_acceleration",
+          "name": "Tarikan Lemah",
+          "category": "engine"
+        }
+      }
+    },
+    {
+      "test": "Symptoms Endpoint (en)",
+      "success": true,
+      "details": "Retrieved 11 symptoms in en",
+      "timestamp": "2025-09-20T18:31:42.669303",
+      "response_data": {
+        "count": 11,
+        "sample": {
+          "id": "weak_acceleration",
+          "name": "Weak Acceleration",
+          "category": "engine"
+        }
+      }
+    },
+    {
+      "test": "Symptoms Endpoint (es)",
+      "success": true,
+      "details": "Retrieved 11 symptoms in es",
+      "timestamp": "2025-09-20T18:31:42.671862",
+      "response_data": {
+        "count": 11,
+        "sample": {
+          "id": "weak_acceleration",
+          "name": "Aceleraci\u00f3n D\u00e9bil",
+          "category": "engine"
+        }
+      }
+    },
+    {
+      "test": "Diagnosis Engine - Single Symptom - Weak Acceleration",
+      "success": false,
+      "details": "HTTP 500: {\"detail\":\"Diagnosis failed: 4 validation errors for SparePart\\nsuppliers.0\\n  Input should be a valid dictionary [type=dict_type, input_value='Yamaha', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.1\\n  Input should be a valid dictionary [type=dict_type, input_value='Honda', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.2\\n  Input should be a valid dictionary [type=dict_type, input_value='Suzuki', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.3\\n  Input should be a valid dictionary [type=dict_type, input_value='Aftermarket', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\"}",
+      "timestamp": "2025-09-20T18:31:43.676509",
+      "response_data": null
+    },
+    {
+      "test": "Diagnosis Engine - Multiple Symptoms - Engine Issues",
+      "success": false,
+      "details": "HTTP 500: {\"detail\":\"Diagnosis failed: 4 validation errors for SparePart\\nsuppliers.0\\n  Input should be a valid dictionary [type=dict_type, input_value='Yamaha', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.1\\n  Input should be a valid dictionary [type=dict_type, input_value='Honda', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.2\\n  Input should be a valid dictionary [type=dict_type, input_value='Suzuki', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.3\\n  Input should be a valid dictionary [type=dict_type, input_value='Aftermarket', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\"}",
+      "timestamp": "2025-09-20T18:31:43.679885",
+      "response_data": null
+    },
+    {
+      "test": "Diagnosis Engine - Brake System Issues",
+      "success": false,
+      "details": "HTTP 500: {\"detail\":\"Diagnosis failed: 4 validation errors for SparePart\\nsuppliers.0\\n  Input should be a valid dictionary [type=dict_type, input_value='Brembo', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.1\\n  Input should be a valid dictionary [type=dict_type, input_value='EBC', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.2\\n  Input should be a valid dictionary [type=dict_type, input_value='Ferodo', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.3\\n  Input should be a valid dictionary [type=dict_type, input_value='TRW', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\"}",
+      "timestamp": "2025-09-20T18:31:43.683006",
+      "response_data": null
+    },
+    {
+      "test": "Diagnosis Engine - Complex Diagnosis",
+      "success": false,
+      "details": "HTTP 500: {\"detail\":\"Diagnosis failed: 4 validation errors for SparePart\\nsuppliers.0\\n  Input should be a valid dictionary [type=dict_type, input_value='NGK', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.1\\n  Input should be a valid dictionary [type=dict_type, input_value='Denso', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.2\\n  Input should be a valid dictionary [type=dict_type, input_value='Bosch', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\\nsuppliers.3\\n  Input should be a valid dictionary [type=dict_type, input_value='Iridium', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.11/v/dict_type\"}",
+      "timestamp": "2025-09-20T18:31:43.686039",
+      "response_data": null
+    },
+    {
+      "test": "Diagnosis History",
+      "success": true,
+      "details": "Retrieved 0 total diagnoses, pagination works (limit 2: 0 items)",
+      "timestamp": "2025-09-20T18:31:44.695522",
+      "response_data": {
+        "total_count": 0,
+        "paginated_count": 0
+      }
+    },
+    {
+      "test": "Spare Parts Search - CVT (IDR)",
+      "success": true,
+      "details": "Found 2 parts, avg price: 500000",
+      "timestamp": "2025-09-20T18:31:45.698511",
+      "response_data": {
+        "results_count": 2,
+        "sample_part": "CVT Roller"
+      }
+    },
+    {
+      "test": "Spare Parts Search - brake (USD)",
+      "success": true,
+      "details": "Found 1 parts, avg price: 27",
+      "timestamp": "2025-09-20T18:31:45.700576",
+      "response_data": {
+        "results_count": 1,
+        "sample_part": "Brake Pads"
+      }
+    },
+    {
+      "test": "Spare Parts Search - spark (EUR)",
+      "success": true,
+      "details": "Found 1 parts, avg price: 9",
+      "timestamp": "2025-09-20T18:31:45.702472",
+      "response_data": {
+        "results_count": 1,
+        "sample_part": "Spark Plug"
+      }
+    },
+    {
+      "test": "Spare Parts Search - roller (IDR)",
+      "success": true,
+      "details": "Found 1 parts, avg price: 500000",
+      "timestamp": "2025-09-20T18:31:45.704297",
+      "response_data": {
+        "results_count": 1,
+        "sample_part": "CVT Roller"
+      }
+    },
+    {
+      "test": "Profile Management",
+      "success": false,
+      "details": "Profile not updated correctly: {'id': '2a1aa3df-299d-4a30-bfd6-d642acfef5f7', 'email': 'testmechanic@bengkelbot.com', 'name': 'Ahmad Mechanic', 'workshop_name': 'Bengkel Jaya Motor', 'phone': '+62812345678', 'created_at': '2025-09-20T18:31:39.405000', 'is_active': True}",
+      "timestamp": "2025-09-20T18:31:46.708510",
+      "response_data": null
+    }
+  ]
+}
