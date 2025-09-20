@@ -63,6 +63,11 @@ class UserLogin(BaseModel):
     email: str
     password: str
 
+class UserUpdate(BaseModel):
+    name: Optional[str] = None
+    workshop_name: Optional[str] = None
+    phone: Optional[str] = None
+
 class Symptom(BaseModel):
     id: str
     name: str
