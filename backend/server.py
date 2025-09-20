@@ -82,7 +82,7 @@ class SparePart(BaseModel):
     currency: str = "IDR"
     suppliers: List[Dict[str, Any]] = []
 
-class Diagnosisresult(BaseModel):
+class DiagnosisResult(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     user_id: str
     symptoms: List[str]
