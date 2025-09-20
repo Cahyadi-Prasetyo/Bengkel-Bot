@@ -451,18 +451,16 @@ async def get_user_profile(current_user: dict = Depends(get_current_user)):
 
 @app.put("/api/user/profile")
 async def update_user_profile(
-    name: Optional[str] = None,
-    workshop_name: Optional[str] = None,
-    phone: Optional[str] = None,
+    user_update: UserUpdate,
     current_user: dict = Depends(get_current_user)
 ):
     update_data = {}
-    if name:
-        update_data["name"] = name
-    if workshop_name:
-        update_data["workshop_name"] = workshop_name
-    if phone:
-        update_data["phone"] = phone
+    if user_update.name:
+        update_data["name"] = user_update.name
+    if user_update.workshop_name:
+        update_data["workshop_name"] = user_update.workshop_name
+    if user_update.phone:
+        update_data["phone"] = user_update.phone
     
     if update_data:
         await db.users.update_one({"id": current_user["id"]}, {"$set": update_data})
