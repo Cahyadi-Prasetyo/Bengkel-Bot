@@ -426,7 +426,10 @@ async def get_diagnosis_history(
     limit: int = 10,
     skip: int = 0
 ):
-    cursor = db.diagnoses.find({"user_id": current_user["id"]}).sort("created_at", -1).skip(skip).limit(limit)
+    cursor = db.diagnoses.find(
+        {"user_id": current_user["id"]}, 
+        {"_id": 0}  # Exclude MongoDB _id field
+    ).sort("created_at", -1).skip(skip).limit(limit)
     diagnoses = await cursor.to_list(length=limit)
     return diagnoses
 
