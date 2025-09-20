@@ -373,12 +373,15 @@ async def create_diagnosis(
                 part_data = GLOBAL_SPARE_PARTS[part_id]
                 price_data = part_data["prices"]["IDR"]  # Default to IDR
                 
+                # Convert supplier strings to dictionaries
+                suppliers_dict = [{"name": supplier} for supplier in part_data["suppliers"]]
+                
                 spare_part = SparePart(
                     name=part_data["name"],
                     category=part_data["category"],
                     average_price=price_data["average"],
                     currency="IDR",
-                    suppliers=part_data["suppliers"]
+                    suppliers=suppliers_dict
                 )
                 spare_parts.append(spare_part)
                 total_cost += price_data["average"]
